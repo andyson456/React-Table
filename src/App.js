@@ -1,69 +1,34 @@
 import React, { Component } from 'react';
-import './index.css';
-import ReactTable from 'react-table';
-import 'react-table/react-table.css'
+import { Navbar, Nav, NavItem } from 'reactstrap';
+import routes from './routes';
+import { NavLink, Route } from 'react-router-dom';
+import Table from './Components/table';
+
 
 
 class App extends Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            posts: []
+
         }
-    }
+    };
 
     render() {
-        const data = [{
-            employee: '',
-            date: '',
-            type: '',
-            activity: '',
-            in: '',
-            out: '',
-            hours: '',
-            notes: '',
-            approved: '',
-            quickbooks: ''
-          },{
-         
-          }]
-         
-          const columns = [{
-            Header: 'Date',
-            accessor: 'date'
-          }, {
-            Header: 'Employee',
-            accessor: 'employee' // String-based value accessors!
-          }, {
-            Header: 'Type',
-            accessor: 'type',
-          }, {
-            id: 'friendName', // Required because our accessor is not a string
-            Header: 'Project',
-          }, {
-            Header: 'Activity', // Custom header components!
-            accessor: 'activity'
-          }, {
-            Header: 'In'
-          }, {
-            Header: 'Out'
-          }, {
-            Header: 'Hours' 
-          }, {
-            Header: 'Notes'
-          }, {
-            Header: 'Approved'
-          }, {
-            Header: 'QuickBooks'
-          }]
-         
-          return (
-          <ReactTable
-            data={data}
-            columns={columns}
-          />)
-        
-    }
+        return(
+        <div className="App">
+            <h1><a className="navbar-brand" href="home">Employee Time Clock</a></h1>
+            <Navbar color="faded">
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <NavLink className={'nav-link'} activeClassName={'active'}
+                        to={routes.table}>Table</NavLink>
+                    </NavItem>
+                </Nav>
+            </Navbar>
+            <Route exact path={routes.table} component={Table} />
+        </div>
+    )}
 }
 
 export default App;
