@@ -8,16 +8,22 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            posts: []
         }
     }
 
     render() {
         const data = [{
-            employee: 'Dustin ',
-            date: '6/9/2019',
+            employee: '',
+            date: '',
             type: '',
             activity: '',
+            in: '',
+            out: '',
+            hours: '',
+            notes: '',
+            approved: '',
+            quickbooks: ''
           },{
          
           }]
