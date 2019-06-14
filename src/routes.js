@@ -1,5 +1,8 @@
 const routes = {
-    table: '/table'
+    table: '/table',
+    timeEntry: '/timeEntry',
+    editTime: '/editTime',
+    addTime: '/addTime'
 }
 
 export default routes;
