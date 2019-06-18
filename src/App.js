@@ -8,9 +8,8 @@ import EditTime from './Components/editTime';
 import AddTime from './Components/addTime';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Icon from '@material-ui/core/Icon';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import AddIcon from '@material-ui/icons/Add';
 
 class App extends Component {
     constructor(){
@@ -30,6 +29,7 @@ class App extends Component {
             </Button>
             
             <Button variant="contained" color="primary">
+                <AddIcon />
                 Add Time
             </Button>
             <Navbar color="faded">
