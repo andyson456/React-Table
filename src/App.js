@@ -30,11 +30,13 @@ class App extends Component {
                     <AccessAlarmIcon />
                     Clock Out
                 </Button>
-            
-                <Button variant="contained" color="primary">
-                    <AddIcon />
-                    Add Time
-                </Button>
+
+                <NavItem>
+                    <NavLink className={'nav-link'} activeClassName={'active'}
+                    to={routes.addTime}><Button variant="contained" color="primary">
+                        <AddIcon />Add Time</Button>
+                    </NavLink>
+                </NavItem>
 
                 <Flexbox display="flex" flexDirection="row-reverse">
                     <Button variant="contained">
@@ -61,14 +63,6 @@ class App extends Component {
                     <NavItem>
                         <NavLink className={'nav-link'} activeClassName={'active'}
                         to={routes.timeEntry}>Time Entry</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className={'nav-link'} activeClassName={'active'}
-                        to={routes.editTime}>Edit Time</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className={'nav-link'} activeClassName={'active'}
-                        to={routes.addTime}>Add Time</NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>
