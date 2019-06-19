@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 class AddTime extends Component {
     constructor(props){
@@ -18,12 +19,14 @@ class AddTime extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onSubmit(this.state);
+        //this.props.onSubmit(this.state);
+        console.log(this.state);
     }
 
     render() {
         return(
             <form>
+                <h1>Add Time</h1>
                 <input placeholder="Employee" 
                 value={this.state.employee}
                 onChange={e => this.setState({employee: e.target.value})} />
@@ -44,7 +47,9 @@ class AddTime extends Component {
                 value={this.state.notes}
                 onChange={e => this.setState({notes: e.target.value})} />
                 <br />
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
+                <br />
+                <Button variant="contained" color="secondary">Cancel</Button>
+                <Button variant="contained" color="primary" onClick={e => this.onSubmit(e)}>Add Time</Button>
             </form>
         )
     }
