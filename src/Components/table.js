@@ -3,6 +3,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 
+
 class Table extends Component {
     constructor(props){
         super(props);
