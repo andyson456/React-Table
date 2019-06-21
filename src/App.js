@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+
 import { Navbar, Nav, NavItem } from 'reactstrap';
 import routes from './routes';
 import { NavLink, Route } from 'react-router-dom';
+
 import Table from './Components/table';
 import TimeEntry from './Components/timeEntry';
 import EditTime from './Components/editTime';
 import AddTime from './Components/addTime';
+
 import Button from '@material-ui/core/Button';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import SettingsIcon from '@material-ui/icons/Settings';
 import FilterIcon from '@material-ui/icons/Filter';
 import AddIcon from '@material-ui/icons/Add';
+
 import Flexbox from 'flexbox-react';
+
+
 
 class App extends Component {
     constructor(){
@@ -20,6 +26,11 @@ class App extends Component {
 
         }
     };
+
+    // MAKE AJAX CALLS HERE
+    componentDidMount() {
+        console.log("Component has mounted");
+    }
 
     render() {
         return(
@@ -31,12 +42,12 @@ class App extends Component {
                     Clock Out
                 </Button>
 
-                <NavItem>
-                    <NavLink className={'nav-link'} activeClassName={'active'}
-                    to={routes.addTime}><Button variant="contained" color="primary">
-                        <AddIcon />Add Time</Button>
-                    </NavLink>
-                </NavItem>
+                
+                <NavLink className={'nav-link'} activeClassName={'active'}
+                to={routes.addTime}><Button variant="contained" color="primary" m={2}>
+                    <AddIcon />Add Time</Button>
+                </NavLink>
+               
 
                 <Flexbox display="flex" flexDirection="row-reverse">
                     <Button variant="contained">
